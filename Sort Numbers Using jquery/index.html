@@ -6,12 +6,49 @@
         <h1 id="heading1" style="text-align:center;">Sort the numbers using jQuery</h1><br>
         <input type="number" id="num" placeholder="Enter the number" style="position:-webkit-sticky;">
         <button type="button" id="button1" onclick="addNumber()">ADD</button>
-        <select multiple="multiple" style="width: 200px;height: 200px;position:relative;"  ></select>
-        <button type="button" id="button2" onclick="">SORT</button>
+        <select multiple="multiple" style="width: 200px;height: 200px;position:relative;" id="dropdown1" ></select>
+        <button type="button" id="button2" onclick="sortNumbers()" >SORT</button>
+        <select multiple="multiple" style="width: 200px;height: 200px;position: relative;" id="dropdown2"></select>
+        <script>
+            $(document).ready(function()
+            {
+                function addNumber()
+                {
+                    var num=$("#num").val();
+                    $("#dropdown1").append("<option>"+num+"</option");
+                }
+
+                function sortNumbers() {
+                var numbers = [];
+                $("#dropdown1 option").each(function() {
+                    numbers.push(parseInt($(this).val()));
+                });
+
+                numbers.sort(function(a, b) {
+                    return a - b;
+                });
+
+                $("#dropdown2").empty();
+                $.each(numbers, function(index, value) {
+                    $("#dropdown2").append("<option>" + value + "</option>");
+                });
+            }
+
+            $("#button1").click(addNumber);
+            $("#button2").click(sortNumbers);
+        });
+
+            
+        </script>
         <style>
-            #heading1{font-size: larger;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;font-style: italic;}
-            #button1{font-weight: 100;background-color: cornflowerblue;color: aliceblue;border-radius: 20px;padding: 10px;font-family:Georgia, 'Times New Roman', Times, serif;}
-            #button2{font-weight: 100;background-color: cornflowerblue;color: aliceblue;border-radius: 20px;padding: 10px;font-family: Georgia, 'Times New Roman', Times, serif;}
+            #num{position:absolute;left: 20px;top: 120px;border-color: black;height: 20px;width: 160px;border-radius: 5px;}
+            #button1{position: absolute;left:200px;top:110px}
+            #button2{position: relative;left:150px;top:-203px}
+            #dropdown1{position: relative;left: 14px;top:50px;border-color: black;}
+            #dropdown2{position: relative;top: 50px;border-color: black;}
+            #heading1{font-size: 50px;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;font-style: italic;}
+            #button1{font-weight: 100;background-color: cornflowerblue;color: aliceblue;border-radius: 20px;padding: 10px;font-family:Georgia, 'Times New Roman', Times, serif;width: 80px;}
+            #button2{font-weight: 100;background-color: cornflowerblue;color: aliceblue;border-radius: 20px;padding: 10px;font-family: Georgia, 'Times New Roman', Times, serif;width: 80px;}
         </style>
         </body>
        
