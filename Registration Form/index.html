@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>My Registration Form</title>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+    <h1 id="heading1">Registration Form</h1>
+    <body>
+        <head id="detail1" style="text-align: center;">Enter First Name:</head>
+         <input type="text" placeholder="Enter valid characters only" id="firstname"><br>
+         <head id="detail2">Enter Middle Name:</head>
+         <input type="text" placeholder="Enter valid characters only"><br>
+         <head id="detail3">Enter Last Name:</head>
+         <input type="text" placeholder="Enter valid characters only"><br>
+         <head id="mobileno">Enter mobile Number</head>
+         <input type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" id="mobileno"><br>
+         <label for="branch">Enter your Branch:</label>
+         <select id="branch" name="branch">
+            <option id="Computer">Computer</option>
+            <option id="IT">IT</option>
+            <option id="AIDS">AIDS</option>
+            <option id="ENTC">ENTC</option>
+            <option id="Mechanical">Mechanical</option>
+            <option id="Chemical">Chemical</option>
+            <option id="Instrumentation">Instrumentation</option>
+         </select><br>
+
+         <head id="cpi">Enter your current CPI:</head>
+         <input type="number" id="cgpa" name="cgpa" oninput="checkNumber()"><br>
+         <head id="gender">Enter your Gender:</head>
+         <input type="checkbox" id="male">
+         <label for="male">Male</label>
+         <input type="checkbox" id="female">
+         <label for="female">Female</label>
+         <input type="checkbox" id="other">
+         <label for="other">Other</label><br>
+         <head id="dob">Date Of Birth:</head>
+         <input id="date" type="date" placeholder="dd-mm-yyyy"><br>
+         <head id="address">Address:</head>
+         <textarea id="address" type="text" ></textarea>
+         <script>
+            
+            
+
+         </script>
+         <style>
+            #heading1{text-align: center;}
+            #firstname{border-radius: 24px;padding: 10px;}
+            #address{left: 100px;}
+
+
+            body {
+            display: flex;
+            flex-direction: column;
+            margin:10px;
+            padding: 100px;
+        }
+
+        #form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+         </style>
+    </body>
+    
+</html>
